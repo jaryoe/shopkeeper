@@ -2,29 +2,28 @@ const {
   override,
   disableEsLint,
   overrideDevServer,
-  watchAll,
+  addDecoratorsLegacy,
 } = require("customize-cra");
 
-const proxy = () => (config) =>{
-  config.proxy = {
-    '/apiii': {
-        target: 'http://localhost:3000',
-        changeOrigin: true,
-        pathRewrite: { '^/api': '/api' },
+const addProxy = () => (configFunction) => {
+  //启用代理
+  configFunction.proxy = {
+    "/api": {
+      target: "http://localhost:3000",
+      changeOrigin: true,
+      secure: false,
+      // pathRewrite: { '^/api': 'api' },
     },
+  };
+  return configFunction;
 };
-  return config;
-}
 
 module.exports = {
   webpack: override(
-    // usual webpack plugin
+    // enable legacy decorators babel plugin
+
+    // disable eslint in webpack
     disableEsLint()
   ),
-  devServer: overrideDevServer(
-    // dev server plugin
-   // proxy(),
-    watchAll(),
-    
-  ),
+  devServer: overrideDevServer(addProxy()),
 };

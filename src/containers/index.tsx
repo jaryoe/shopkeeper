@@ -1,15 +1,14 @@
-import Login from './login'
+import Login from "./login";
+import LayoutContainer from "./layout";
 
-import {loginTypes} from '../store/action'
-import { all } from 'redux-saga/effects'
-import watchSaga from '../store/saga'
+import { loginTypes } from "./login/types";
+import { all } from "redux-saga/effects";
+import { watchSaga } from "../store/saga";
 
 const allTypes = [...loginTypes];
 
-export function* rootSaga(){
-    yield all([watchSaga(allTypes)])
-  }
-
-export {
-    Login
+export function* rootSaga() {
+  yield all([watchSaga(allTypes)]);
 }
+
+export { Login, LayoutContainer };

@@ -4,7 +4,12 @@
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext"
+      "esnext",
+      "ES2015",
+      "ES2017"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -21,5 +26,11 @@
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "files": [
+    "./typings.d.ts"
   ]
 }

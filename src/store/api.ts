@@ -10,7 +10,6 @@ const Api = (url: string, data: any, method?: string, file?: boolean) => {
     //"X-Requested-With": "XMLHttpRequest",
   };
   const fileHeaders = {
-    KF_TOKEN: API_KEY_TOKEN,
     "X-Requested-With": "XMLHttpRequest",
   };
 

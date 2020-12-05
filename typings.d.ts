@@ -15,13 +15,31 @@ declare namespace JSX {
   }
 }
 
-declare var module: NodeModule;
-interface NodeModule {
-  id: string;
+//允许ts,tsx文件引入less文件
+declare module '*.less' {
+  var styles: any;
+  export = styles;
 }
 
-// definition.d.ts
-declare module "*.png" {
-  const value: string;
-  export = value;
+//允许ts,tsx文件引入scss文件
+declare module '*.scss' {
+  var styles: any;
+  export = styles;
 }
+
+//允许ts,tsx文件引入svg文件
+declare module '*.svg' {
+  const content: any;
+  export default content;
+}
+
+// worker-loader
+declare module 'worker-loader!*' {
+  class WebpackWorker extends Worker {
+    constructor();
+  }
+  export default WebpackWorker;
+}
+
+declare const EXCELPATH: string;
+declare const ENV: string;

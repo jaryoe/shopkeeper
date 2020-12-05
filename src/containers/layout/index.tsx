@@ -2,10 +2,20 @@ import React from "react";
 import { Layout, Menu } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import styles from "./index.module.scss";
+import {
+  BrowserRouter,
+  HashRouter,
+  Redirect,
+  Route,
+  Switch,
+  useParams,
+} from "react-router-dom";
+import December from "../pages/202012";
 
 const { Header, Content, Footer, Sider } = Layout;
 
 const LayoutContainer = () => {
+  const { date } = useParams();
   return (
     <>
       <Layout style={{ minHeight: "100%" }}>
@@ -24,6 +34,9 @@ const LayoutContainer = () => {
             <Menu.Item key="1" icon={<UserOutlined />}>
               首页
             </Menu.Item>
+            <Menu.Item key="1" icon={<UserOutlined />}>
+              首页2
+            </Menu.Item>
           </Menu>
         </Sider>
         <Layout>
@@ -36,7 +49,13 @@ const LayoutContainer = () => {
               className="site-layout-background"
               style={{ padding: 24, minHeight: 360 }}
             >
-              content
+              <BrowserRouter>
+                <Switch>
+                  <Route path={"/money/202012"}>
+                    <December />
+                  </Route>
+                </Switch>
+              </BrowserRouter>
             </div>
           </Content>
           <Footer style={{ textAlign: "center" }}>

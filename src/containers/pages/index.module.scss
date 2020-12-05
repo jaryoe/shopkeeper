@@ -1,0 +1,35 @@
+.stat {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.count {
+  padding: 12px;
+  width: 400px;
+  margin: auto;
+  margin-bottom: 20px;
+  position: relative;
+  label {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  span {
+    font-size: 24px;
+    border: 1px dashed grey;
+    padding: 5px;
+    color: #1ab31a;
+  }
+}
+.groupChat {
+  height: 200px;
+  margin-top: 30px;
+  h3 {
+    margin: 0;
+  }
+}
+.chatStat {
+  margin-top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+  display: inline-block;
+}

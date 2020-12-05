@@ -8,7 +8,7 @@ const Router = () => (
       <Route exact path="/">
         <Login />
       </Route>
-      <Route exact path="/shopkeeper">
+      <Route path="/money">
         <LayoutContainer />
       </Route>
       <Redirect to={"/"}></Redirect>

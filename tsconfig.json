@@ -1,36 +1,30 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext",
-      "ES2015",
-      "ES2017"
-    ],
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "module": "esnext",
+    "types": ["node"],
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "lib": ["dom", "es2015", "es2017"],
+    "jsx": "react",
+    "sourceMap": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    // "noUnusedLocals": false,
+    "noImplicitAny": true,
+    // "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
+    "downlevelIteration": true,
+    "baseUrl": "./",
     "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react"
+    "noEmit": true
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "node_modules"
-  ],
-  "files": [
-    "./typings.d.ts"
-  ]
+  "files": ["./typings.d.ts"],
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }

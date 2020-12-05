@@ -1,9 +1,9 @@
 {
-  "name": "lxj",
+  "name": "app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "alex": "PORT=9000 react-app-rewired start --script-version react-app-ts",
+    "lxj": "react-app-rewired start --script-version react-app-ts",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject"
@@ -24,6 +24,7 @@
     ]
   },
   "dependencies": {
+    "@ant-design/charts": "^1.0.9",
     "@ant-design/icons": "^4.1.0",
     "abortcontroller-polyfill": "^1.4.0",
     "antd": "^4.2.4",
